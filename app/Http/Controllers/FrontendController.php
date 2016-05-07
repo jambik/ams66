@@ -11,12 +11,10 @@ class FrontendController extends Controller
 
     public function __construct()
     {
-        $categories = Category::withDepth()->defaultOrder()->get()->toTree();
         $settings   = Settings::find(1);
 
         $this->settings = $settings;
 
-        view()->share('categories', $categories);
         view()->share('settings', $settings);
     }
 }
