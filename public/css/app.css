@@ -90,9 +90,9 @@ nav .search { margin: 35px 0 20px 0; }
 #appointment { min-height: 670px; color: #fff; }
 #appointment .text-xl { text-align: center; margin: 30px 0 50px 0; line-height: 1; font-weight: 300; }
 
-.appointment-land-department { background: #ffd772 url('../img/appointment-land-department.jpg') center center no-repeat; }
-.appointment-building-department { background: #ffd772 url('../img/appointment-building-department.jpg') center center no-repeat; }
-.appointment-investing-department { background: #ffd772 url('../img/appointment-investing-department.jpg') center center no-repeat; }
+.appointment-land-department { background: #3e4f6b url('../img/appointment-land-department.jpg') center center no-repeat; }
+.appointment-building-department { background: #3e4f6b url('../img/appointment-building-department.jpg') center center no-repeat; }
+.appointment-investing-department { background: #3e4f6b url('../img/appointment-investing-department.jpg') center center no-repeat; }
 
 #cottage-or-land { background: #ffd772 url('../img/cottage-or-land.jpg') center center no-repeat; min-height: 863px; color: #fff; }
 #cottage-or-land .img-responsive { margin: 0 auto; }

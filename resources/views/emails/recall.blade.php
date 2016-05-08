@@ -3,7 +3,7 @@
 @section('content')
 
     @include ('beautymail::templates.sunny.heading' , [
-        'heading' => 'Обратная связь',
+        'heading' => 'Отзыв',
         'level' => 'h1',
     ])
 

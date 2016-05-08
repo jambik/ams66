@@ -81,9 +81,11 @@ Route::group([], function ()
     Route::get('/search', ['as' => 'search', 'uses' => 'SearchController@search']);
 
     # Feedback
-    Route::get('feedback', ['as' => 'feedback', 'uses' => 'CommonController@feedback']);
     Route::post('feedback', ['as' => 'feedback.send', 'uses' => 'CommonController@feedbackSend']);
 
-    ## Callback
-    Route::post('callback', ['as' => 'callback', 'uses' => 'CommonController@callback']);
+    ## Recall
+    Route::post('recall', ['as' => 'recall.send', 'uses' => 'CommonController@recallSend']);
+
+    ## Consultation
+    Route::post('consultation', ['as' => 'consultation.send', 'uses' => 'CommonController@consultationSend']);
 });

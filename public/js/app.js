@@ -1,8 +1,20 @@
 $(document).ready(function() {
 
-    if ($('#form_callback').length) {
-        $('#form_callback').on('submit', function(e){
-            ajaxFormSubmit(e, callbackSuccess);
+    if ($('#form_feedback').length) {
+        $('#form_feedback').on('submit', function(e){
+            ajaxFormSubmit(e, feedbackSuccess);
+        })
+    }
+
+    if ($('#form_recall').length) {
+        $('#form_recall').on('submit', function(e){
+            ajaxFormSubmit(e, recallSuccess);
+        })
+    }
+
+    if ($('#form_consultation').length) {
+        $('#form_consultation').on('submit', function(e){
+            ajaxFormSubmit(e, consultationSuccess);
         })
     }
 
@@ -285,9 +297,19 @@ function ajaxFormSubmit(e, successFunction)
     });
 }
 
-function callbackSuccess(data)
+function feedbackSuccess(data)
 {
-    $('#callbackModal').modal('hide');
+    showNoty(data.message, 'success');
+}
+
+function recallSuccess(data)
+{
+    $('#recallModal').modal('hide');
+    showNoty(data.message, 'success');
+}
+
+function consultationSuccess(data)
+{
     showNoty(data.message, 'success');
 }
 

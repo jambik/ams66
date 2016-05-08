@@ -18,7 +18,9 @@
             <div class="row" style="opacity: 0;">
                 <div class="text-xl text-shadow">Запишитесь на бесплатную консультацию</div>
                 <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
-                    <form action="#" method="POST" role="form">
+                    <form action="{{ route('consultation.send') }}" id="form_consultation" method="POST" role="form">
+                        {{ csrf_field() }}
+                        <div class="form-status"></div>
                         <div class="form-group">
                             <input type="text" name="name" class="form-control input-lg" placeholder="Представьтесь">
                         </div>
@@ -29,7 +31,7 @@
                             <textarea name="message" class="form-control input-lg" placeholder="Ваше сообщение" style="height: 250px;"></textarea>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-lg btn-block btn-default">Отправить письмо</button>
+                            <button type="submit" class="btn btn-lg btn-block btn-default form-button">Отправить письмо</button>
                         </div>
                     </form>
                 </div>

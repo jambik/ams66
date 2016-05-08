@@ -12,16 +12,6 @@ use Validator;
 class CommonController extends FrontendController
 {
     /**
-     * Show the feedback page.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function feedback()
-    {
-        return view('feedback');
-    }
-
-    /**
      * Send feedback form.
      *
      * @param Request $request
@@ -31,21 +21,19 @@ class CommonController extends FrontendController
     {
         $rules = [
             'name' => 'required',
-            'email' => 'required_if:phone,""',
-            'phone' => 'required_if:email,""',
+            'contact' => 'required',
             'message' => 'required',
         ];
 
         $messages = [
             'name.required' => 'Введите Ваше имя. Мы же должны как-то к Вам обращаться :)',
-            'email.required_if' => 'А где же ваш email для обратной связи?',
-            'phone.required_if' => 'Укажите пожалуйста Ваш телефончик для обратной связи',
+            'contact.required' => 'Введите ваши контактные данные для обратной связи',
             'message.required' => 'А где собственно сообщение?',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
 
-        $validator->after(function($validator) use ($request)
+        /*$validator->after(function($validator) use ($request)
         {
             $recaptcha = new ReCaptcha(env('GOOGLE_RECAPTCHA_SECRET'));
             $resp = $recaptcha->verify($request->get('g-recaptcha-response'), $_SERVER['REMOTE_ADDR']);
@@ -54,7 +42,7 @@ class CommonController extends FrontendController
             {
                 $validator->errors()->add('google_recaptcha_error', 'Ошибка reCAPTCHA: '.implode(', ', $resp->getErrorCodes()));
             }
-        });
+        });*/
 
         if ($validator->fails())
         {
@@ -80,19 +68,23 @@ class CommonController extends FrontendController
     }
 
     /**
-     * Send callback form.
+     * Send recall form.
      *
      * @param Request $request
      * @return Response
      */
-    public function callback(Request $request)
+    public function recallSend(Request $request)
     {
         $rules = [
-            'phone' => 'required',
+            'name' => 'required',
+            'contact' => 'required',
+            'message' => 'required',
         ];
 
         $messages = [
-            'phone.required' => 'Укажите пожалуйста Ваш телефончик для обратной связи',
+            'name.required' => 'Введите Ваше имя. Мы же должны как-то к Вам обращаться :)',
+            'contact.required' => 'Введите ваши контактные данные для обратной связи',
+            'message.required' => 'А где отзыв?',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -103,20 +95,65 @@ class CommonController extends FrontendController
         }
 
         $beautymail = app()->make(Beautymail::class);
-        $beautymail->send('emails.callback', ['input' => $request->all()], function($message)
+        $beautymail->send('emails.recall', ['input' => $request->all()], function($message)
         {
             $message->from(env('MAIL_ADDRESS'), env('MAIL_NAME'));
             $message->to($this->settings['email'] ?: env('MAIL_ADDRESS'));
-            $message->subject('Обратный звонок');
+            $message->subject('Отзыв');
         });
 
         if ($request->ajax()){
             return json_encode([
                 'status' => 'ok',
-                'message' => 'Заявка на обратный звонок отправлена',
+                'message' => 'Отзыв отправлен',
             ]);
         }
 
-        return redirect(route('index'))->with('status', 'Заявка на обратный звонок отправлена');
+        return redirect(route('index'))->with('status', 'Отзыв отправлен');
+    }
+
+    /**
+     * Send consultation form.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function consultationSend(Request $request)
+    {
+        $rules = [
+            'name' => 'required',
+            'contact' => 'required',
+            'message' => 'required',
+        ];
+
+        $messages = [
+            'name.required' => 'Введите Ваше имя. Мы же должны как-то к Вам обращаться :)',
+            'contact.required' => 'Введите ваши контактные данные для обратной связи',
+            'message.required' => 'А где отзыв?',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails())
+        {
+            $this->throwValidationException($request, $validator);
+        }
+
+        $beautymail = app()->make(Beautymail::class);
+        $beautymail->send('emails.consultation', ['input' => $request->all()], function($message)
+        {
+            $message->from(env('MAIL_ADDRESS'), env('MAIL_NAME'));
+            $message->to($this->settings['email'] ?: env('MAIL_ADDRESS'));
+            $message->subject('Заявка на консультацию');
+        });
+
+        if ($request->ajax()){
+            return json_encode([
+                'status' => 'ok',
+                'message' => 'Заявка на консультацию отправлена',
+            ]);
+        }
+
+        return redirect(route('index'))->with('status', 'Заявка на консультацию отправлена');
     }
 }

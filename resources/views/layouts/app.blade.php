@@ -106,7 +106,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <a href="#" class="btn btn-xl btn-danger">Оставить свой отзыв</a>
+                <a href="#" data-toggle="modal" data-target="#recallModal" class="btn btn-xl btn-danger">Оставить свой отзыв</a>
             </div>
         </div>
     </section>
@@ -118,7 +118,9 @@
             <div class="row">
                 <div class="col-lg-4 col-md-5">
                     <div class="text-l">Обратная связь</div>
-                    <form action="#" method="POST">
+                    <form action="{{ route('feedback.send') }}" id="form_feedback" method="POST">
+                        {{ csrf_field() }}
+                        <div class="form-status"></div>
                         <div class="form-group">
                             <input type="text" name="name" id="name" class="form-control input-lg" placeholder="Представьтесь">
                         </div>
@@ -129,7 +131,7 @@
                             <textarea name="message" id="message" class="form-control input-lg" placeholder="Ваше сообщение" style="height: 250px;"></textarea>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-lg btn-block btn-info">Отправить письмо</button>
+                            <button type="submit" class="btn btn-lg btn-block btn-info form-button">Отправить письмо</button>
                         </div>
                     </form>
                 </div>
@@ -152,7 +154,7 @@
     </section>
 </div>
 
-@include('partials._callback')
+@include('partials._recall')
 @include('partials._flash')
 @include('partials._metrika')
 
