@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="text-xxl text-shadow">Инвестиционный департамент</div>
                 <div class="text-l text-shadow">Бесплатно расскажем, где купить подходящую землю</div>
-                <div class="more"><a href="#"><img src="img/icon-more.png"></a></div>
+                <div class="more"><a href="#" onclick="$('body').scrollTo($('#appointment'), 500)"><img src="img/icon-more.png"></a></div>
             </div>
         </div>
     </section>

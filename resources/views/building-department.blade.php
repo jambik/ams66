@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="text-xxl text-shadow">Строительный департамент</div>
                 <div class="text-l text-shadow">Бесплатно расскажем, как построить дом Вашей мечты</div>
-                <div class="more"><a href="#"><img src="img/icon-more.png"></a></div>
+                <div class="more"><a href="#" onclick="$('body').scrollTo($('#appointment'), 500)"><img src="img/icon-more.png"></a></div>
             </div>
         </div>
     </section>

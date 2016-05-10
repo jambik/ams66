@@ -173,7 +173,7 @@ $(document).ready(function() {
         offset: 200,
         onBottomIn: function (elm, distance_scrolled) {
             $(elm).animate({opacity: 1}, 500);
-            $(elm).addClass("animated fadeInRight");
+            $(elm).addClass("animated fadeInDown");
         }
     });
 
@@ -188,7 +188,7 @@ $(document).ready(function() {
         offset: 200,
         onBottomIn: function (elm, distance_scrolled) {
             $(elm).animate({opacity: 1}, 500);
-            $(elm).addClass("animated fadeInRight");
+            $(elm).addClass("animated fadeInDown");
         }
     });
 
@@ -218,7 +218,7 @@ $(document).ready(function() {
         offset: 200,
         onBottomIn: function (elm, distance_scrolled) {
             $(elm).animate({opacity: 1}, 500);
-            $(elm).addClass("animated fadeInRight");
+            $(elm).addClass("animated fadeInDown");
         }
     });
 
@@ -233,7 +233,7 @@ $(document).ready(function() {
         offset: 200,
         onBottomIn: function (elm, distance_scrolled) {
             $(elm).animate({opacity: 1}, 500);
-            $(elm).addClass("animated fadeInRight");
+            $(elm).addClass("animated fadeInDown");
         }
     });
 
