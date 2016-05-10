@@ -14,42 +14,42 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     /* App files */
     mix.styles([
-        '../../../node_modules/bootstrap/dist/css/bootstrap.min.css',
-        '../../../node_modules/sweetalert/dist/sweetalert.css',
-        '../../../node_modules/font-awesome/css/font-awesome.min.css',
-        '../../../node_modules/animate.css/animate.min.css'
+        '../../../bower_components/bootstrap/dist/css/bootstrap.min.css',
+        '../../../bower_components/sweetalert/dist/sweetalert.css',
+        '../../../bower_components/font-awesome/css/font-awesome.min.css',
+        '../../../bower_components/animate.css/animate.min.css'
     ], 'public/css/app.bundle.css');
     mix.scripts([
-        '../../../node_modules/jquery/dist/jquery.min.js',
-        '../../../node_modules/bootstrap/dist/js/bootstrap.min.js',
-        '../../../node_modules/sweetalert/dist/sweetalert.min.js',
-        '../../../node_modules/jquery.scrollto/jquery.scrollTo.min.js',
-        '../../../node_modules/noty/js/noty/packaged/jquery.noty.packaged.min.js'
+        '../../../bower_components/jquery/dist/jquery.min.js',
+        '../../../bower_components/bootstrap/dist/js/bootstrap.min.js',
+        '../../../bower_components/sweetalert/dist/sweetalert.min.js',
+        '../../../bower_components/jquery.scrollTo/jquery.scrollTo.min.js',
+        '../../../bower_components/noty/js/noty/packaged/jquery.noty.packaged.min.js'
     ], 'public/js/app.bundle.js');
     mix.copy([
-        'node_modules/bootstrap/fonts',
-        'node_modules/font-awesome/fonts/*.*',
+        'bower_components/bootstrap/fonts',
+        'bower_components/font-awesome/fonts/*.*',
     ], 'public/fonts');
 
 
     /* Admin files */
     mix.styles([
-        '../../../node_modules/materialize-css/dist/css/materialize.min.css',
-        '../../../node_modules/animate.css/animate.min.css',
-        '../../../node_modules/sweetalert/dist/sweetalert.css',
-        '../../../node_modules/jquery-datetimepicker/jquery.datetimepicker.css',
+        '../../../bower_components/Materialize/dist/css/materialize.min.css',
+        '../../../bower_components/animate.css/animate.min.css',
+        '../../../bower_components/sweetalert/dist/sweetalert.css',
+        '../../../bower_components/datetimepicker/jquery.datetimepicker.css',
         '../../../bower_components/dropzone/dist/min/dropzone.min.css'
     ], 'public/css/admin.bundle.css');
     mix.scripts([
-        '../../../node_modules/jquery/dist/jquery.min.js',
+        '../../../bower_components/jquery/dist/jquery.min.js',
         '../../../node_modules/vue/dist/vue.min.js',
-        '../../../node_modules/materialize-css/dist/js/materialize.min.js',
-        '../../../node_modules/noty/js/noty/packaged/jquery.noty.packaged.min.js',
-        '../../../node_modules/jquery.scrollto/jquery.scrollTo.min.js',
-        '../../../node_modules/sweetalert/dist/sweetalert.min.js',
+        '../../../bower_components/Materialize/dist/js/materialize.min.js',
+        '../../../bower_components/noty/js/noty/packaged/jquery.noty.packaged.min.js',
+        '../../../bower_components/jquery.scrollTo/jquery.scrollTo.min.js',
+        '../../../bower_components/sweetalert/dist/sweetalert.min.js',
         '../../../node_modules/tablesorter/dist/js/jquery.tablesorter.combined.min.js',
         '../../../node_modules/tablesorter/dist/js/extras/jquery.tablesorter.pager.min.js',
-        '../../../node_modules/jquery-datetimepicker/build/jquery.datetimepicker.full.min.js',
+        '../../../bower_components/datetimepicker/build/jquery.datetimepicker.full.min.js',
         '../../../bower_components/dropzone/dist/min/dropzone.min.js',
         '../../../bower_components/jquery-ui/ui/minified/core.min.js',
         '../../../bower_components/jquery-ui/ui/minified/widget.min.js',
@@ -58,8 +58,8 @@ elixir(function(mix) {
     ], 'public/js/admin.bundle.js');
 
     /* Jstree Files */
-    mix.copy('node_modules/jstree/dist', 'public/library/jstree');
+    mix.copy('bower_components/jstree/dist', 'public/library/jstree');
 
     /* Materialize-css Files */
-    mix.copy('node_modules/materialize-css/dist/fonts', 'public/fonts');
+    mix.copy('bower_components/Materialize/dist/fonts', 'public/fonts');
 });

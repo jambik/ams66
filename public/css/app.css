@@ -86,6 +86,9 @@ nav .search { margin: 35px 0 20px 0; }
 #land-department .text-xxl { text-align: center; margin: 100px 0 50px 0; line-height: 1; font-weight: 300; }
 #land-department .text-l { text-align: center; margin: 150px 0 80px 0; line-height: 1; font-weight: 300; }
 #land-department .more { text-align: center; margin: 80px 0 0 0; }
+#land-department .more img { transition: all .2s ease-in-out; }
+#land-department .more img:hover { transform: scale(1.2); }
+
 
 #appointment { min-height: 670px; color: #fff; }
 #appointment .text-xl { text-align: center; margin: 30px 0 50px 0; line-height: 1; font-weight: 300; }
@@ -100,7 +103,7 @@ nav .search { margin: 35px 0 20px 0; }
 #cottage-or-land .text-l { font-size: 20pt; text-align: center; margin: 60px 0 40px 0; line-height: 1; font-weight: 300; }
 #cottage-or-land .text-or { margin: 300px 0 20px 0; }
 
-#steps { background: #344255 linear-gradient(to top, #ddd 1%, #fff 50%, #ddd 100%); color: #000; }
+#steps { background: #344255 linear-gradient(to top, #fff 1%, #ddd 100%/*, #ddd 100%*/); color: #000; }
 #steps .step{ margin-bottom: 60px; }
 #steps .img { display: inline-block; padding: 30px; background: #45505f; border: 5px solid #1b2431; border-radius: 50%; }
 #steps .img-responsive { margin: 0 auto; }
@@ -113,6 +116,8 @@ nav .search { margin: 35px 0 20px 0; }
 #building-department .text-xxl { text-align: center; margin: 100px 0 50px 0; line-height: 1; font-weight: 300; }
 #building-department .text-l { text-align: center; margin: 150px 0 80px 0; line-height: 1; font-weight: 300; }
 #building-department .more { text-align: center; margin: 80px 0 0 0; }
+#building-department .more img { transition: all .2s ease-in-out; }
+#building-department .more img:hover { transform: scale(1.2); }
 
 #materials { background: #953b39 url('../img/materials.jpg') center center no-repeat; min-height: 919px; color: #fff; }
 #materials .text-xl { text-align: center; margin: 80px 0 50px 0; line-height: 1; font-weight: 300; }
@@ -124,6 +129,8 @@ nav .search { margin: 35px 0 20px 0; }
 #investing-department .text-xxl { text-align: center; margin: 100px 20% 50px 20%; line-height: 1; font-weight: 300; }
 #investing-department .text-l { text-align: center; margin: 100px 0 80px 0; line-height: 1; font-weight: 300; }
 #investing-department .more { text-align: center; margin: 80px 0 0 0; }
+#investing-department .more img { transition: all .2s ease-in-out; }
+#investing-department .more img:hover { transform: scale(1.2); }
 
 #investing { background: #953b39 url('../img/investing.jpg') center center no-repeat; min-height: 974px; color: #fff; }
 #investing .text-xl { text-align: center; margin: 80px 0 50px 0; line-height: 1; font-weight: 300; }
