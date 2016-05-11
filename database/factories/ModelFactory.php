@@ -49,6 +49,22 @@ $factory->define(App\News::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Partner::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->sentence(2),
+        'image' => $faker->image(storage_path('images').DIRECTORY_SEPARATOR.'partners', 640, 480, null, false, false),
+    ];
+});
+
+$factory->define(App\Recall::class, function (Faker\Generator $faker) {
+    return [
+        'text' => $faker->paragraph(3),
+        'name' => $faker->name,
+        'image' => $faker->image(storage_path('images').DIRECTORY_SEPARATOR.'recalls', 640, 480, null, false, false),
+        'approved' => $faker->boolean(),
+    ];
+});
+
 $factory->define(App\Slide::class, function (Faker\Generator $faker) {
     return [
         'title' => $faker->sentence(2),

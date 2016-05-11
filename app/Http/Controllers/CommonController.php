@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Recall;
 use Illuminate\Http\Request;
-use Mail;
 use ReCaptcha\ReCaptcha;
 use Snowfire\Beautymail\Beautymail;
 use Validator;
@@ -22,13 +22,13 @@ class CommonController extends FrontendController
         $rules = [
             'name' => 'required',
             'contact' => 'required',
-            'message' => 'required',
+//            'message' => 'required',
         ];
 
         $messages = [
             'name.required' => 'Введите Ваше имя. Мы же должны как-то к Вам обращаться :)',
             'contact.required' => 'Введите ваши контактные данные для обратной связи',
-            'message.required' => 'А где собственно сообщение?',
+//            'message.required' => 'А где собственно сообщение?',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -68,23 +68,23 @@ class CommonController extends FrontendController
     }
 
     /**
-     * Send recall form.
+     * Send get info form.
      *
      * @param Request $request
      * @return Response
      */
-    public function recallSend(Request $request)
+    public function getInfoSend(Request $request)
     {
         $rules = [
             'name' => 'required',
             'contact' => 'required',
-            'message' => 'required',
+//            'message' => 'required',
         ];
 
         $messages = [
             'name.required' => 'Введите Ваше имя. Мы же должны как-то к Вам обращаться :)',
             'contact.required' => 'Введите ваши контактные данные для обратной связи',
-            'message.required' => 'А где отзыв?',
+//            'message.required' => 'А где отзыв?',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -95,6 +95,53 @@ class CommonController extends FrontendController
         }
 
         $beautymail = app()->make(Beautymail::class);
+        $beautymail->send('emails.get_info', ['input' => $request->all()], function($message)
+        {
+            $message->from(env('MAIL_ADDRESS'), env('MAIL_NAME'));
+            $message->to($this->settings['email'] ?: env('MAIL_ADDRESS'));
+            $message->subject('Запрос на инфорамацию');
+        });
+
+        if ($request->ajax()){
+            return json_encode([
+                'status' => 'ok',
+                'message' => 'Запрос на инфорамацию',
+            ]);
+        }
+
+        return redirect(route('index'))->with('status', 'Запрос на инфорамацию');
+    }
+
+    /**
+     * Send recall form.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function recallSend(Request $request)
+    {
+        $rules = [
+            'name' => 'required',
+            'contact' => 'required',
+//            'message' => 'required',
+        ];
+
+        $messages = [
+            'name.required' => 'Введите Ваше имя. Мы же должны как-то к Вам обращаться :)',
+            'contact.required' => 'Введите ваши контактные данные для обратной связи',
+//            'message.required' => 'А где отзыв?',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails())
+        {
+            $this->throwValidationException($request, $validator);
+        }
+
+        Recall::create($request->all());
+
+        $beautymail = app()->make(Beautymail::class);
         $beautymail->send('emails.recall', ['input' => $request->all()], function($message)
         {
             $message->from(env('MAIL_ADDRESS'), env('MAIL_NAME'));
@@ -103,7 +150,7 @@ class CommonController extends FrontendController
         });
 
         if ($request->ajax()){
-            return json_encode([
+            return response()->json([
                 'status' => 'ok',
                 'message' => 'Отзыв отправлен',
             ]);
@@ -123,13 +170,13 @@ class CommonController extends FrontendController
         $rules = [
             'name' => 'required',
             'contact' => 'required',
-            'message' => 'required',
+//            'message' => 'required',
         ];
 
         $messages = [
             'name.required' => 'Введите Ваше имя. Мы же должны как-то к Вам обращаться :)',
             'contact.required' => 'Введите ваши контактные данные для обратной связи',
-            'message.required' => 'А где отзыв?',
+//            'message.required' => 'А где отзыв?',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);

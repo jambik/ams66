@@ -17,6 +17,7 @@ class CreateBlocksTable extends Migration
             $table->string('alias');
             $table->string('title')->default('');
             $table->mediumText('text')->default('');
+            $table->string('page')->default('');
             $table->timestamps();
         });
     }

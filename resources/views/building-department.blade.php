@@ -6,9 +6,7 @@
     <section id="building-department" style="opacity: 0;">
         <div class="container">
             <div class="row">
-                <div class="text-xxl text-shadow">Строительный департамент</div>
-                <div class="text-l text-shadow">Бесплатно расскажем, как построить дом Вашей мечты</div>
-                <div class="more"><a href="#" onclick="$('body').scrollTo($('#appointment'), 500)"><img src="img/icon-more.png"></a></div>
+                {!! $blocks['building-department']->text !!}
             </div>
         </div>
     </section>
@@ -42,17 +40,7 @@
     <section id="materials" style="opacity: 0;">
         <div class="container">
             <div class="row" style="opacity: 0;">
-                <div class="text-xl">Из каких материалов и как строить свой дом?</div>
-                <div class="text-l">Крупнейший банк строительных технологий</div>
-                <div class="text-center button">
-                    <a href="#" class="btn btn-lg btn-default">Узнать больше</a>
-                </div>
-                <p class="text-justify">
-                    Третий блок: заголовок - Из каких материалов и как строить свой дом?. Ниже заголовка надпись: Крупнейший банк строительных технологий. Ниже надписи кнопка Узнать больше, вызывающая форму заполнения контактных данных.
-                </p>
-                <p class="text-justify">
-                    Четвертый блок по типу блока схема работы: заголовок - три простых шага к строительству Вашей мечты. Ниже непосредственно сами шаги. Первый - запишитесь на консультацию. Второй - посетите наш офис, и мы продумаем лучший дом для Вас. Третий - строите дом и наслаждайтесь жизнью за городом. К каждому шагу релевантная инфографика. Все шаги анимированы.
-                </p>
+                {!! $blocks['materials']->text !!}
             </div>
         </div>
     </section>
@@ -60,29 +48,7 @@
     <section id="steps" style="opacity: 0;">
         <div class="container" style="opacity: 0;">
             <div class="row">
-                <div class="text-xl">Три простых шага к осуществлению Вашей мечты</div>
-                <div class="row">
-                    <div class="col-sm-4 text-center step">
-                        <div class="img"><img src="img/step-1.png" class="img-responsive"></div>
-                        <div class="text-l">запишитесь на консультацию</div>
-                    </div>
-                    <div class="col-sm-4 text-center step">
-                        <div class="img"><img src="img/step-2.png" class="img-responsive"></div>
-                        <div class="text-l">посетите наш офис и мы продумаем лучший дом для вас</div>
-                    </div>
-                    <div class="col-sm-4 text-center step">
-                        <div class="img"><img src="img/step-3.png" class="img-responsive"></div>
-                        <div class="text-l">стройте дом и наслаждайтесь жизнью за городом</div>
-                    </div>
-                </div>
-                <div class="row arrows hidden-xs">
-                    <div class="col-sm-2 col-sm-offset-3 text-center">
-                        <div class="arrow"><img src="img/arrow-step.png" class="img-responsive"></div>
-                    </div>
-                    <div class="col-sm-2 col-sm-offset-2 text-center">
-                        <div class="arrow"><img src="img/arrow-step.png" class="img-responsive"></div>
-                    </div>
-                </div>
+                {!! $blocks['steps-building']->text !!}
             </div>
         </div>
     </section>

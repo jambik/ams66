@@ -1,7 +1,7 @@
 <div class="modal fade" id="recallModal" tabindex="-1" role="dialog" aria-labelledby="recallLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form action="{{ route('recall.send') }}" method="POST" name="form_recall" id="form_recall">
+            <form action="{{ route('recall.send') }}" method="POST" name="form_recall" id="form_recall" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">&times;</span></button>
@@ -17,6 +17,9 @@
                     </div>
                     <div class="form-group">
                         <textarea name="message" id="message" class="form-control input-lg" placeholder="Ваш отзыв" style="height: 250px;"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="file" class="form-control input-lg" name="image" placeholder="Ваше фото">
                     </div>
                 </div>
                 <div class="modal-footer">

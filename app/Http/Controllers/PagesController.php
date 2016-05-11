@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Page;
+use App\Partner;
+use App\Recall;
 
 class PagesController extends FrontendController
 {
@@ -13,7 +14,9 @@ class PagesController extends FrontendController
      */
     public function index()
     {
-        return view('index');
+        $partners = Partner::take(12)->get();
+
+        return view('index', compact('partners'));
     }
 
     public function landDepartment()

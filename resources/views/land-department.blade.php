@@ -6,9 +6,7 @@
     <section id="land-department" style="opacity: 0;">
         <div class="container">
             <div class="row">
-                <div class="text-xxl text-shadow">Земельный департамент</div>
-                <div class="text-l text-shadow">Бесплатно расскажем, где купить подходящую землю</div>
-                <div class="more"><a href="#" onclick="$('body').scrollTo($('#appointment'), 500)"><img src="img/icon-more.png"></a></div>
+                {!! $blocks['land-department']->text !!}
             </div>
         </div>
     </section>
@@ -42,26 +40,7 @@
     <section id="cottage-or-land" style="opacity: 0;">
         <div class="container">
             <div class="row" style="opacity: 0;">
-                <div class="text-xl text-shadow">Что лучше приобрести</div>
-                <div class="col-sm-5 choice-left text-center">
-                    <div class="text-right arrow hidden-xs">
-                        <img src="img/arrow-left.png">
-                    </div>
-                    <div class="text-l">Участок в коттеджном поселке</div>
-                    <img src="img/choice-cottage.jpg" class="img-responsive">
-                </div>
-                <div class="col-sm-2">
-                    <div class="text-l text-or text-center">ИЛИ</div>
-                </div>
-                <div class="col-sm-5 choice-left text-center">
-                    <div class="text-left arrow hidden-xs">
-                        <img src="img/arrow-right.png">
-                    </div>
-                    <div class="text-l">Участок в коттеджном поселке</div>
-                    <img src="img/choice-land.jpg" class="img-responsive">
-                </div>
-                <div class="clearfix"></div>
-                <div class="text-l">Владеем объективной информацией обо всех коттеджных поселках и земельных участках области</div>
+                {!! $blocks['cottage-or-land']->text !!}
             </div>
         </div>
     </section>
@@ -69,29 +48,7 @@
     <section id="steps" style="opacity: 0;">
         <div class="container" style="opacity: 0;">
             <div class="row">
-                <div class="text-xl">Три простых шага к осуществлению Вашей мечты</div>
-                <div class="row">
-                    <div class="col-sm-4 text-center step">
-                        <div class="img"><img src="img/step-1.png" class="img-responsive"></div>
-                        <div class="text-l">запишитесь на консультацию</div>
-                    </div>
-                    <div class="col-sm-4 text-center step">
-                        <div class="img"><img src="img/step-2.png" class="img-responsive"></div>
-                        <div class="text-l">посетите наш офис и выберите участок</div>
-                    </div>
-                    <div class="col-sm-4 text-center step">
-                        <div class="img"><img src="img/step-3.png" class="img-responsive"></div>
-                        <div class="text-l">купите землю и наслаждайтесь жизнью за городом</div>
-                    </div>
-                </div>
-                <div class="row arrows hidden-xs">
-                    <div class="col-sm-2 col-sm-offset-3 text-center">
-                        <div class="arrow"><img src="img/arrow-step.png" class="img-responsive"></div>
-                    </div>
-                    <div class="col-sm-2 col-sm-offset-2 text-center">
-                        <div class="arrow"><img src="img/arrow-step.png" class="img-responsive"></div>
-                    </div>
-                </div>
+                {!! $blocks['steps-land']->text !!}
             </div>
         </div>
     </section>

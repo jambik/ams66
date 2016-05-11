@@ -13,12 +13,16 @@
     {!! Form::textarea('text', null, ['class' => 'materialize-textarea validate'.($errors->has('text') ? ' invalid' : '')]) !!}
 </div>
 
+<div class="input-field col s12">
+    {!! Form::hidden('page', isset($pageAlias) ? $pageAlias : null, ['class' => 'validate'.($errors->has('page') ? ' invalid' : '')]) !!}
+</div>
+
 <div class="input-field col s12 center">
     <button type="submit" class="btn-large waves-effect waves-light"><i class="material-icons left">check_circle</i> {{ $submitButtonText }}</button>
 </div>
 
 <div class="input-field col s12 center">
-    <a href="{{ route('admin.blocks.index') }}" class="btn grey waves-effect waves-light">Отмена</a>
+    <a href="{{ isset($item) ? route('admin.blocks.index') . '?page=' . $item->page : session()->previousUrl() }}" class="btn grey waves-effect waves-light">Отмена</a>
 </div>
 
 @section('head_scripts')

@@ -46,6 +46,12 @@ Route::group(['prefix' => 'admin'], function()
         ## Slides
         Route::resource('slides', 'Admin\SlidesController');
 
+        ## Partners
+        Route::resource('partners', 'Admin\PartnersController');
+
+        ## Recalls
+        Route::resource('recalls', 'Admin\RecallsController');
+
         ## Users
         Route::resource('users', 'Admin\UsersController');
 
@@ -85,6 +91,9 @@ Route::group([], function ()
 
     ## Recall
     Route::post('recall', ['as' => 'recall.send', 'uses' => 'CommonController@recallSend']);
+
+    ## Get Info
+    Route::post('get_info', ['as' => 'get_info.send', 'uses' => 'CommonController@getInfoSend']);
 
     ## Consultation
     Route::post('consultation', ['as' => 'consultation.send', 'uses' => 'CommonController@consultationSend']);

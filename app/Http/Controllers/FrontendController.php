@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
+use App\Block;
+use App\Recall;
 use App\Settings;
 
 class FrontendController extends Controller
@@ -12,9 +13,13 @@ class FrontendController extends Controller
     public function __construct()
     {
         $settings   = Settings::find(1);
-
         $this->settings = $settings;
-
         view()->share('settings', $settings);
+
+        $recalls = Recall::where('approved', true)->orderBy('created_at', 'desc')->take(3)->get();
+        view()->share('recalls', $recalls);
+
+        $blocks = Block::all()->keyBy('alias');
+        view()->share('blocks', $blocks);
     }
 }

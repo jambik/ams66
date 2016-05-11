@@ -1,5 +1,4 @@
 body, td, input { font-family: 'Roboto Condensed', sans-serif; font-size: 16pt; }
-body { color: #fff; }
 
 .text-xxl { font-size: 62pt; }
 .text-xl { font-size: 40pt; }
@@ -13,6 +12,7 @@ a.btn-purple:hover { color: #bbb; }
 a.btn-black:hover { color: #bbb; }
 
 .body {
+    color: #fff;
     background:
             linear-gradient(135deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
             linear-gradient(225deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;

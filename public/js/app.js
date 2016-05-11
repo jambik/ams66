@@ -6,9 +6,15 @@ $(document).ready(function() {
         })
     }
 
-    if ($('#form_recall').length) {
+    /*if ($('#form_recall').length) {
         $('#form_recall').on('submit', function(e){
             ajaxFormSubmit(e, recallSuccess);
+        })
+    }*/
+
+    if ($('#form_get_info').length) {
+        $('#form_get_info').on('submit', function(e){
+            ajaxFormSubmit(e, getInfoSuccess);
         })
     }
 
@@ -17,6 +23,69 @@ $(document).ready(function() {
             ajaxFormSubmit(e, consultationSuccess);
         })
     }
+
+    $("#form_recall").submit(function() {
+
+        // Место для отображения ошибок в форме
+        var formStatus = $(this).find('.form-status');
+        if (formStatus.length) {
+            formStatus.html('');
+        }
+
+        // Анимированная кнопка при отправки формы
+        var formButton = $(this).find('.form-button');
+        if (formButton.length) {
+            formButton.append(' <i class="fa fa-spinner fa-spin"></i>');
+            formButton.prop('disabled', true);
+        }
+
+        var formData = new FormData($(this)[0]);
+        var url = $(this).attr("action");
+
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: formData,
+            //async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (data)
+            {
+                $('#recallModal').modal('hide');
+                showNoty(data.message, 'success');
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+                if (formStatus.length && jqXHR.status == 422) // Если статус 422 (неправильные входные данные) то отображаем ошибки
+                {
+                    var formStatusText = "<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><div class='text-uppercase'>" + (formStatus.data('errorText') ? formStatus.data('errorText') : 'Ошибка!') + "</div><ul>";
+
+                    $.each(jqXHR.responseJSON, function (index, value) {
+                        formStatusText += "<li>" + value + "</li>";
+                    });
+
+                    formStatusText += "</ul></div>";
+                    formStatus.html(formStatusText);
+                    $('body').scrollTo(formStatus, 500);
+                }
+                else
+                {
+                    sweetAlert("", "Ошибка при запросе к серсеру", 'error');
+                }
+            },
+            complete: function (jqXHR, textStatus)
+            {
+                if (formButton.length)
+                {
+                    formButton.find('i').remove();
+                    formButton.prop('disabled', false);
+                }
+            }
+        });
+
+        return false;
+    });
 
     $('#our-mission').animate({opacity: 1}, 500);
     $('#our-mission').addClass("animated fadeIn");
@@ -302,9 +371,9 @@ function feedbackSuccess(data)
     showNoty(data.message, 'success');
 }
 
-function recallSuccess(data)
+function getInfoSuccess(data)
 {
-    $('#recallModal').modal('hide');
+    $('#getInfoModal').modal('hide');
     showNoty(data.message, 'success');
 }
 

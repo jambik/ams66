@@ -6,9 +6,7 @@
     <section id="investing-department" style="opacity: 0;">
         <div class="container">
             <div class="row">
-                <div class="text-xxl text-shadow">Инвестиционный департамент</div>
-                <div class="text-l text-shadow">Бесплатно расскажем, где купить подходящую землю</div>
-                <div class="more"><a href="#" onclick="$('body').scrollTo($('#appointment'), 500)"><img src="img/icon-more.png"></a></div>
+                {!! $blocks['investing-department']->text !!}
             </div>
         </div>
     </section>
@@ -42,17 +40,7 @@
     <section id="investing" style="opacity: 0;">
         <div class="container">
             <div class="row" style="opacity: 0;">
-                <div class="text-xl">Как надежно инвестировать в загородное строительство?</div>
-                <div class="text-l">Обладаем всей объективной информацией обо всех поселках нашей области.</div>
-                <div class="text-center button">
-                    <a href="#" class="btn btn-lg btn-default">Узнать больше</a>
-                </div>
-                <p class="text-justify">
-                    Третий блок: заголовок - Из каких материалов и как строить свой дом?. Ниже заголовка надпись: Крупнейший банк строительных технологий. Ниже надписи кнопка Узнать больше, вызывающая форму заполнения контактных данных.
-                </p>
-                <p class="text-justify">
-                    Четвертый блок по типу блока схема работы: заголовок - три простых шага к строительству Вашей мечты. Ниже непосредственно сами шаги. Первый - запишитесь на консультацию. Второй - посетите наш офис, и мы продумаем лучший дом для Вас. Третий - строите дом и наслаждайтесь жизнью за городом. К каждому шагу релевантная инфографика. Все шаги анимированы.
-                </p>
+                {!! $blocks['investing']->text !!}
             </div>
         </div>
     </section>
@@ -60,29 +48,7 @@
     <section id="steps" style="opacity: 0;">
         <div class="container" style="opacity: 0;">
             <div class="row">
-                <div class="text-xl">Три простых шага к осуществлению Вашей мечты</div>
-                <div class="row">
-                    <div class="col-sm-4 text-center step">
-                        <div class="img"><img src="img/step-1.png" class="img-responsive"></div>
-                        <div class="text-l">запишитесь на консультацию</div>
-                    </div>
-                    <div class="col-sm-4 text-center step">
-                        <div class="img"><img src="img/step-2.png" class="img-responsive"></div>
-                        <div class="text-l">посетите наш офис и мы разработаем инвестиционный план</div>
-                    </div>
-                    <div class="col-sm-4 text-center step">
-                        <div class="img"><img src="img/step-3_1.png" class="img-responsive"></div>
-                        <div class="text-l">выгодно инвестируйте свои средства и получайте доходы</div>
-                    </div>
-                </div>
-                <div class="row arrows hidden-xs">
-                    <div class="col-sm-2 col-sm-offset-3 text-center">
-                        <div class="arrow"><img src="img/arrow-step.png" class="img-responsive"></div>
-                    </div>
-                    <div class="col-sm-2 col-sm-offset-2 text-center">
-                        <div class="arrow"><img src="img/arrow-step.png" class="img-responsive"></div>
-                    </div>
-                </div>
+                {!! $blocks['steps-investing']->text !!}
             </div>
         </div>
     </section>
