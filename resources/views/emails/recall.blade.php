@@ -13,7 +13,7 @@
     <p><strong>Данные от пользователя:</strong></p>
     <p>Имя: {{ $input['name'] }}</p>
     <p>Контактные данные: {{ $input['contact'] }}</p>
-    <p>Сообщение: {{ $input['message'] }}</p>
+    <p>Сообщение: {{ $input['text'] }}</p>
 
     @include('beautymail::templates.sunny.contentEnd')
 

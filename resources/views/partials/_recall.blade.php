@@ -16,7 +16,7 @@
                         <input type="text" class="form-control input-lg" name="contact" placeholder="Телефон или Email">
                     </div>
                     <div class="form-group">
-                        <textarea name="message" id="message" class="form-control input-lg" placeholder="Ваш отзыв" style="height: 250px;"></textarea>
+                        <textarea name="text" id="text" class="form-control input-lg" placeholder="Ваш отзыв" style="height: 250px;"></textarea>
                     </div>
                     <div class="form-group">
                         <input type="file" class="form-control input-lg" name="image" placeholder="Ваше фото">
