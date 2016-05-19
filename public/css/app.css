@@ -80,7 +80,7 @@ nav .search { margin: 35px 0 20px 0; }
 #contacts .contacts-email { padding-left: 80px; background: url('../img/icon-mail.png') left center no-repeat; line-height: 56px; margin: 20px 0; }
 #contacts .contacts-address { margin: 10px 0; }
 
-#map { background: #f7f1d9 url('../img/section-map.jpg') center center no-repeat; min-height: 833px; }
+#map { background: #f7f1d9/* url('../img/section-map.jpg') center center no-repeat; min-height: 833px;*/ }
 
 #land-department { background: #ffd772 url('../img/land-department.jpg') center center no-repeat; min-height: 594px; color: #fff; }
 #land-department .text-xxl { text-align: center; margin: 100px 0 50px 0; line-height: 1; font-weight: 300; }
