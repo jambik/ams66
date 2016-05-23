@@ -120,11 +120,11 @@
                 </div>
                 <div class="col-lg-7 col-lg-offset-1 col-md-6 col-md-offset-1">
                     <div class="text-l">Контакты</div>
-                    <div class="contacts-phone">+ 7 926 048-35-30</div>
+                    <div class="contacts-phone">+7 (343) 266-44-28</div>
                     <div class="contacts-email">info@domen.name</div>
                     <hr>
-                    <div class="contacts-address">Город: Тюмень</div>
-                    <div class="contacts-address">Улица: Лесная, дом 12</div>
+                    <div class="contacts-address">Город: Екатеринбург</div>
+                    <div class="contacts-address">Улица: Бажова, дом 35</div>
                 </div>
             </div>
         </div>
