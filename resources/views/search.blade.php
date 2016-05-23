@@ -12,7 +12,6 @@
     <hr>
 
     @if ($products->count())
-
         <div class="row products-list">
             @each('catalog.product_list', $products, 'product')
         </div>

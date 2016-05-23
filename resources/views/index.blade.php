@@ -57,18 +57,20 @@
         </div>
     </section>
 
-    <section id="partners" style="opacity: 0;">
-        <div class="container">
-            <div class="row" style="opacity: 0;">
-                <div class="text-xl">Наши партнеры</div>
-                <div class="partners-list">
-                    @foreach($partners as $partner)
-                        <div class="col-md-3 col-sm-4">
-                            <img src="/images/medium/{{ $partner->img_url . $partner->image }}" title="{{ $partner->title }}" class="img-responsive box-shadow">
-                        </div>
-                    @endforeach
+    @if ($partners->count())
+        <section id="partners" style="opacity: 0;">
+            <div class="container">
+                <div class="row" style="opacity: 0;">
+                    <div class="text-xl">Наши партнеры</div>
+                    <div class="partners-list">
+                        @foreach($partners as $partner)
+                            <div class="col-md-3 col-sm-4">
+                                <img src="/images/medium/{{ $partner->img_url . $partner->image }}" title="{{ $partner->title }}" class="img-responsive box-shadow">
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 @endsection

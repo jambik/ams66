@@ -44,22 +44,23 @@
                 <div><a href="{{ route('index') }}">Академия малоэтажного строительства</a></div>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
-                <div class="menu col-lg-6 col-md-12 text-center">
+                <div class="menu col-lg-8 col-md-12 text-center">
                     <ul>
+                        <li><a href="/">Главная</a></li>
                         <li><a href="{{ route('land-department') }}">Земельный департамент</a></li>
                         <li><a href="{{ route('building-department') }}">Департамент строительства</a></li>
                         <li><a href="{{ route('investing-department') }}">Инвестирование</a></li>
                         <li><a href="#">Наши партнеры</a></li>
                     </ul>
                 </div>
-                <form class="search navbar-right col-lg-2" role="search">
+                {{--<form class="search navbar-right col-lg-2" role="search">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Поиск по сайту" name="search" id="search">
                         <div class="input-group-btn">
                             <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                         </div>
                     </div>
-                </form>
+                </form>--}}
             </div>
         </div>
     </nav>
@@ -69,7 +70,10 @@
     <section id="recalls" style="opacity: 0;">
         <div class="container">
             <div class="text-xl">Отзывы</div>
-
+            @if ( ! $recalls->count())
+                <p class="text-center">- отзывов пока нет -</p>
+                <p class="text-center">&nbsp;</p>
+            @endif
             @foreach($recalls as $recall)
                 <div class="row" style="opacity: 0;">
                     <div class="col-md-3 col-sm-3">
